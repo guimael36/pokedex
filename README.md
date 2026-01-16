@@ -1,16 +1,48 @@
-# React + Vite
+# Pokédex - Desafio Frontend DevQuest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma Single Page Application (SPA) desenvolvida em React.js que consome a PokeAPI para listar Pokémons, ver seus detalhes e filtrar por tipos.
 
-Currently, two official plugins are available:
+## 🔨 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Home:** Listagem inicial de 10 Pokémons com paginação ("Carregar mais").
+- **Detalhes:** Página interna com foto, nome, tipos, movimentos e descrição das habilidades do Pokémon.
+- **Temas:** Botão para alternar entre Dark Mode e Light Mode.
+- **Filtro (Bônus):** Select para filtrar Pokémons por tipo elemental.
 
-## React Compiler
+## 🛠 Ferramentas Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React.js (Vite):** Escolhido pela rapidez de configuração e performance em desenvolvimento.
+- **Styled-components:** Para estilização CSS-in-JS, facilitando a manutenção e a criação de temas dinâmicos.
+- **Context API:** Utilizada para gerenciar o estado global do tema (Claro/Escuro) sem prop drilling.
+- **React-router-dom:** Para gerenciar a navegação entre a Home e a página de Detalhes sem recarregar a página.
+- **Fetch API:** Para consumo de dados, mantendo a simplicidade sem bibliotecas externas como Axios.
 
-## Expanding the ESLint configuration
+## 💡 Decisões de Projeto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Estrutura:** Optei por separar `pages`, `components` e `contexts` para manter o código organizado e escalável.
+- **Filtragem:** Ao utilizar o filtro por tipo, o botão de paginação é ocultado, pois a API retorna estruturas diferentes para busca por tipo, simplificando a lógica para este desafio.
+- **Habilidades:** É feita uma segunda chamada à API dentro da página de detalhes para buscar a descrição textual das habilidades, filtrando apenas pela linguagem em inglês.
+
+## 🚀 Como rodar o projeto
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/guimael36/pokedex.git
+   ```
+
+2. Entre na pasta:
+   ```bash
+   cd pokedex
+   ```
+
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+4. Rode o projeto:
+   ```bash
+   npm run dev
+   ```
+
+5. Acesse no navegador (geralmente em http://localhost:5173).
